@@ -7,6 +7,14 @@
 {% if article.comments_enabled? %}
   <h2>Leave a comment</h2>
 
+  {% for comment in article.comments %}
+    <div>
+      <p>{{ cooment.name }}</p>
+      <p>{{ comment.email }}</p>
+      <p>{{ comment.content }}</p>
+    </div>
+  {% endfor %}
+
   {% form 'new_comment', article %}
     {{ form.errors | default_errors }}
     <div class="name">
