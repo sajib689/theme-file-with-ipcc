@@ -14,7 +14,9 @@
         <i class="fa-solid fa-xmark fa-2x"></i>
       </a>
       {% for link in linklists.main-menu.links %}
-        <li>{{ link.title | link_to: 'url', 'title' }}</li>
+        <li>
+          <a href="{{link.url}}">{{ link.title }}</a>
+        </li>
 
       {% endfor %}
       <li>
